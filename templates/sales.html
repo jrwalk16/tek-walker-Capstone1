@@ -3,15 +3,20 @@
 
 {% block content %}
 <h1>Use the form below to enter your sales</h1>
-
+<link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
 <form method="POST">
     {{ form.hidden_tag() }}
-    {{form.product_id.label}} {{form.product_id()}}</br>
-    {{form.employee_id.label}} {{form.employee_id()}}</br>
-    {{form.quantity_sold.label}} {{form.quantity_sold()}}</br>
+    {{form.product_id.label}}<br/>
+    {{form.product_id()}}<br/>
+    {{form.employee_id.label}}<br/>
+    {{form.employee_id()}}<br/>
+    {{form.quantity_sold.label}}<br>
+    {{form.quantity_sold()}}<br/>
 
-    {form.year.label}} {{form.year()}}</br>
-    {form.week.label}} {{form.week()}}</br>
+    {form.year.label}}<br/>
+    {{form.year()}}<br/>
+    {form.week.label}}<br/>
+     {{form.week()}}<br/>
     {{form.submit()}}
 </form>
 
