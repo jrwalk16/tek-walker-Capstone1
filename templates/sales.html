@@ -4,4 +4,15 @@
 {% block content %}
 <h1>Use the form below to enter your sales</h1>
 
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{form.product_id.label}} {{form.product_id()}}</br>
+    {{form.employee_id.label}} {{form.employee_id()}}</br>
+    {{form.quantity_sold.label}} {{form.quantity_sold()}}</br>
+
+    {form.year.label}} {{form.year()}}</br>
+    {form.week.label}} {{form.week()}}</br>
+    {{form.submit()}}
+</form>
+
 {% endblock %}
