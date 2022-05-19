@@ -11,12 +11,12 @@ from sqlalchemy.engine import url
 
 
 app = Flask(__name__)
-
+##configure db connection
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Jonah22Milo18@localhost/tractortek'
 app.config['SECRET_KEY'] = "my super secret key"
 
 db = SQLAlchemy(app)
-
+##create Sales table in mysql
 class Sales(db.Model):
 
     __tablename__ = 'sales'
@@ -31,7 +31,7 @@ class Sales(db.Model):
     def __repr__(self):
         return '<Name %r' % self.name
 
-
+##sales form information/setup
 class DbSalesForm(FlaskForm):
     product_id = StringField("Product number", validators=[DataRequired()])
     employee_id = StringField("Employee number", validators=[DataRequired()])
